@@ -7,11 +7,11 @@ cjtInstr: instr*;
 instr: (assign
     | read
     | write
-    /*
     | play
     | invProc
     | cond
     | while_
+    /*
     | addList
     | cutList
      */
@@ -24,6 +24,27 @@ read: READ VAR;
 
 write: WRITE expr (expr)*;
 
+play: PLAY expr;
+
+invProc: PROCNAME (expr (expr)*)? ;
+
+cond: IF exprCond OB cjtInstr CB (ELSE OB cjtInstr CB);
+
+while_: WHILE exprCond OB cjtInstr CB;
+
+addList: ADD expr;
+
+cutList: CUT expr;
+
+exprCond: expr EQ expr  #Equal
+    | expr NEQ expr     #NotEqual
+    | expr LT expr      #LessThan
+    | expr LET expr     #LessEqThan
+    | expr GT expr      #GrThan
+    | expr GET expr     #GrEqThan
+    ;
+
+
 
 expr: expr MULT expr    #Multiplicacio
     | expr DIV expr     #Divisio
@@ -31,7 +52,7 @@ expr: expr MULT expr    #Multiplicacio
     | expr PLUS expr    #Suma
     | expr MINUS expr   #Resta
     | LP expr RP        #Parentesis
-    | LB expr RB        #Llistes
+    | LB (expr)* RB     #Llistes
     | VAR               #Variables
     | NUM               #Numeros
     | STRING            #Strings

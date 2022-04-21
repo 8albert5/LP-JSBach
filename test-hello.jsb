@@ -2,5 +2,5 @@
 
 Main |:
     <!> "Hallo Bach"
-    ~~~ <:> {B A C} ~~~
+    <:> {B A C} ~~~
 :|

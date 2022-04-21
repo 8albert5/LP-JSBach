@@ -1,2 +1,5 @@
 .antlr
 __pycache__
+
+*.interp
+*.tokens

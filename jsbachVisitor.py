@@ -44,6 +44,66 @@ class jsbachVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
+    # Visit a parse tree produced by jsbachParser#play.
+    def visitPlay(self, ctx:jsbachParser.PlayContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by jsbachParser#invProc.
+    def visitInvProc(self, ctx:jsbachParser.InvProcContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by jsbachParser#cond.
+    def visitCond(self, ctx:jsbachParser.CondContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by jsbachParser#while_.
+    def visitWhile_(self, ctx:jsbachParser.While_Context):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by jsbachParser#addList.
+    def visitAddList(self, ctx:jsbachParser.AddListContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by jsbachParser#cutList.
+    def visitCutList(self, ctx:jsbachParser.CutListContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by jsbachParser#Equal.
+    def visitEqual(self, ctx:jsbachParser.EqualContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by jsbachParser#NotEqual.
+    def visitNotEqual(self, ctx:jsbachParser.NotEqualContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by jsbachParser#LessThan.
+    def visitLessThan(self, ctx:jsbachParser.LessThanContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by jsbachParser#LessEqThan.
+    def visitLessEqThan(self, ctx:jsbachParser.LessEqThanContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by jsbachParser#GrThan.
+    def visitGrThan(self, ctx:jsbachParser.GrThanContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by jsbachParser#GrEqThan.
+    def visitGrEqThan(self, ctx:jsbachParser.GrEqThanContext):
+        return self.visitChildren(ctx)
+
+
     # Visit a parse tree produced by jsbachParser#Variables.
     def visitVariables(self, ctx:jsbachParser.VariablesContext):
         return self.visitChildren(ctx)

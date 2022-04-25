@@ -8,78 +8,69 @@ import sys
 
 def serializedATN():
     with StringIO() as buf:
-        buf.write("\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3#")
-        buf.write("\u00b8\4\2\t\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7")
+        buf.write("\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3&")
+        buf.write("\u00a7\4\2\t\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7")
         buf.write("\4\b\t\b\4\t\t\t\4\n\t\n\4\13\t\13\4\f\t\f\4\r\t\r\4\16")
         buf.write("\t\16\4\17\t\17\4\20\t\20\3\2\7\2\"\n\2\f\2\16\2%\13\2")
         buf.write("\3\2\3\2\3\3\3\3\3\3\7\3,\n\3\f\3\16\3/\13\3\5\3\61\n")
         buf.write("\3\3\3\3\3\3\3\3\3\3\4\7\48\n\4\f\4\16\4;\13\4\3\5\3\5")
-        buf.write("\3\5\3\5\3\5\3\5\3\5\5\5D\n\5\3\6\3\6\3\6\3\6\3\7\3\7")
-        buf.write("\3\7\3\b\3\b\3\b\7\bP\n\b\f\b\16\bS\13\b\3\t\3\t\3\t\3")
-        buf.write("\n\3\n\3\n\7\n[\n\n\f\n\16\n^\13\n\5\n`\n\n\3\13\3\13")
-        buf.write("\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\f\3\f\3\f\3")
-        buf.write("\f\3\f\3\f\3\r\3\r\3\r\3\16\3\16\3\16\3\17\3\17\3\17\3")
+        buf.write("\3\5\3\5\3\5\3\5\3\5\3\5\3\5\5\5F\n\5\3\6\3\6\3\6\3\6")
+        buf.write("\3\7\3\7\3\7\3\b\3\b\3\b\7\bR\n\b\f\b\16\bU\13\b\3\t\3")
+        buf.write("\t\3\t\3\n\3\n\3\n\7\n]\n\n\f\n\16\n`\13\n\3\13\3\13\3")
+        buf.write("\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\5\13l\n\13\3\f")
+        buf.write("\3\f\3\f\3\f\3\f\3\f\3\r\3\r\3\r\3\r\3\16\3\16\3\16\3")
         buf.write("\17\3\17\3\17\3\17\3\17\3\17\3\17\3\17\3\17\3\17\3\17")
-        buf.write("\3\17\3\17\3\17\3\17\3\17\3\17\3\17\3\17\3\17\3\17\5\17")
-        buf.write("\u0090\n\17\3\20\3\20\3\20\3\20\3\20\3\20\3\20\7\20\u0099")
-        buf.write("\n\20\f\20\16\20\u009c\13\20\3\20\3\20\3\20\3\20\5\20")
-        buf.write("\u00a2\n\20\3\20\3\20\3\20\3\20\3\20\3\20\3\20\3\20\3")
-        buf.write("\20\3\20\3\20\3\20\3\20\3\20\3\20\7\20\u00b3\n\20\f\20")
-        buf.write("\16\20\u00b6\13\20\3\20\2\3\36\21\2\4\6\b\n\f\16\20\22")
-        buf.write("\24\26\30\32\34\36\2\2\2\u00c4\2#\3\2\2\2\4(\3\2\2\2\6")
-        buf.write("9\3\2\2\2\bC\3\2\2\2\nE\3\2\2\2\fI\3\2\2\2\16L\3\2\2\2")
-        buf.write("\20T\3\2\2\2\22W\3\2\2\2\24a\3\2\2\2\26k\3\2\2\2\30q\3")
-        buf.write("\2\2\2\32t\3\2\2\2\34\u008f\3\2\2\2\36\u00a1\3\2\2\2 ")
-        buf.write("\"\5\4\3\2! \3\2\2\2\"%\3\2\2\2#!\3\2\2\2#$\3\2\2\2$&")
-        buf.write("\3\2\2\2%#\3\2\2\2&\'\7\2\2\3\'\3\3\2\2\2(\60\7\35\2\2")
-        buf.write(")-\7\36\2\2*,\7\36\2\2+*\3\2\2\2,/\3\2\2\2-+\3\2\2\2-")
-        buf.write(".\3\2\2\2.\61\3\2\2\2/-\3\2\2\2\60)\3\2\2\2\60\61\3\2")
-        buf.write("\2\2\61\62\3\2\2\2\62\63\7\33\2\2\63\64\5\6\4\2\64\65")
-        buf.write("\7\34\2\2\65\5\3\2\2\2\668\5\b\5\2\67\66\3\2\2\28;\3\2")
-        buf.write("\2\29\67\3\2\2\29:\3\2\2\2:\7\3\2\2\2;9\3\2\2\2<D\5\n")
-        buf.write("\6\2=D\5\f\7\2>D\5\16\b\2?D\5\20\t\2@D\5\22\n\2AD\5\24")
-        buf.write("\13\2BD\5\26\f\2C<\3\2\2\2C=\3\2\2\2C>\3\2\2\2C?\3\2\2")
-        buf.write("\2C@\3\2\2\2CA\3\2\2\2CB\3\2\2\2D\t\3\2\2\2EF\7\36\2\2")
-        buf.write("FG\7\3\2\2GH\5\36\20\2H\13\3\2\2\2IJ\7\4\2\2JK\7\36\2")
-        buf.write("\2K\r\3\2\2\2LM\7\5\2\2MQ\5\36\20\2NP\5\36\20\2ON\3\2")
-        buf.write("\2\2PS\3\2\2\2QO\3\2\2\2QR\3\2\2\2R\17\3\2\2\2SQ\3\2\2")
-        buf.write("\2TU\7\6\2\2UV\5\36\20\2V\21\3\2\2\2W_\7\35\2\2X\\\5\36")
-        buf.write("\20\2Y[\5\36\20\2ZY\3\2\2\2[^\3\2\2\2\\Z\3\2\2\2\\]\3")
-        buf.write("\2\2\2]`\3\2\2\2^\\\3\2\2\2_X\3\2\2\2_`\3\2\2\2`\23\3")
-        buf.write("\2\2\2ab\7\7\2\2bc\5\34\17\2cd\7\33\2\2de\5\6\4\2ef\7")
-        buf.write("\34\2\2fg\7\b\2\2gh\7\33\2\2hi\5\6\4\2ij\7\34\2\2j\25")
-        buf.write("\3\2\2\2kl\7\t\2\2lm\5\34\17\2mn\7\33\2\2no\5\6\4\2op")
-        buf.write("\7\34\2\2p\27\3\2\2\2qr\7\n\2\2rs\5\36\20\2s\31\3\2\2")
-        buf.write("\2tu\7\13\2\2uv\5\36\20\2v\33\3\2\2\2wx\5\36\20\2xy\7")
-        buf.write("\21\2\2yz\5\36\20\2z\u0090\3\2\2\2{|\5\36\20\2|}\7\22")
-        buf.write("\2\2}~\5\36\20\2~\u0090\3\2\2\2\177\u0080\5\36\20\2\u0080")
-        buf.write("\u0081\7\23\2\2\u0081\u0082\5\36\20\2\u0082\u0090\3\2")
-        buf.write("\2\2\u0083\u0084\5\36\20\2\u0084\u0085\7\24\2\2\u0085")
-        buf.write("\u0086\5\36\20\2\u0086\u0090\3\2\2\2\u0087\u0088\5\36")
-        buf.write("\20\2\u0088\u0089\7\25\2\2\u0089\u008a\5\36\20\2\u008a")
-        buf.write("\u0090\3\2\2\2\u008b\u008c\5\36\20\2\u008c\u008d\7\26")
-        buf.write("\2\2\u008d\u008e\5\36\20\2\u008e\u0090\3\2\2\2\u008fw")
-        buf.write("\3\2\2\2\u008f{\3\2\2\2\u008f\177\3\2\2\2\u008f\u0083")
-        buf.write("\3\2\2\2\u008f\u0087\3\2\2\2\u008f\u008b\3\2\2\2\u0090")
-        buf.write("\35\3\2\2\2\u0091\u0092\b\20\1\2\u0092\u0093\7\27\2\2")
-        buf.write("\u0093\u0094\5\36\20\2\u0094\u0095\7\30\2\2\u0095\u00a2")
-        buf.write("\3\2\2\2\u0096\u009a\7\31\2\2\u0097\u0099\5\36\20\2\u0098")
-        buf.write("\u0097\3\2\2\2\u0099\u009c\3\2\2\2\u009a\u0098\3\2\2\2")
-        buf.write("\u009a\u009b\3\2\2\2\u009b\u009d\3\2\2\2\u009c\u009a\3")
-        buf.write("\2\2\2\u009d\u00a2\7\32\2\2\u009e\u00a2\7\36\2\2\u009f")
-        buf.write("\u00a2\7\37\2\2\u00a0\u00a2\7 \2\2\u00a1\u0091\3\2\2\2")
-        buf.write("\u00a1\u0096\3\2\2\2\u00a1\u009e\3\2\2\2\u00a1\u009f\3")
-        buf.write("\2\2\2\u00a1\u00a0\3\2\2\2\u00a2\u00b4\3\2\2\2\u00a3\u00a4")
-        buf.write("\f\f\2\2\u00a4\u00a5\7\16\2\2\u00a5\u00b3\5\36\20\r\u00a6")
-        buf.write("\u00a7\f\13\2\2\u00a7\u00a8\7\17\2\2\u00a8\u00b3\5\36")
-        buf.write("\20\f\u00a9\u00aa\f\n\2\2\u00aa\u00ab\7\20\2\2\u00ab\u00b3")
-        buf.write("\5\36\20\13\u00ac\u00ad\f\t\2\2\u00ad\u00ae\7\f\2\2\u00ae")
-        buf.write("\u00b3\5\36\20\n\u00af\u00b0\f\b\2\2\u00b0\u00b1\7\r\2")
-        buf.write("\2\u00b1\u00b3\5\36\20\t\u00b2\u00a3\3\2\2\2\u00b2\u00a6")
-        buf.write("\3\2\2\2\u00b2\u00a9\3\2\2\2\u00b2\u00ac\3\2\2\2\u00b2")
-        buf.write("\u00af\3\2\2\2\u00b3\u00b6\3\2\2\2\u00b4\u00b2\3\2\2\2")
-        buf.write("\u00b4\u00b5\3\2\2\2\u00b5\37\3\2\2\2\u00b6\u00b4\3\2")
-        buf.write("\2\2\17#-\609CQ\\_\u008f\u009a\u00a1\u00b2\u00b4")
+        buf.write("\3\17\5\17\u0087\n\17\3\20\3\20\3\20\3\20\3\20\3\20\3")
+        buf.write("\20\3\20\3\20\3\20\3\20\3\20\3\20\3\20\5\20\u0097\n\20")
+        buf.write("\3\20\3\20\3\20\3\20\3\20\3\20\3\20\3\20\3\20\7\20\u00a2")
+        buf.write("\n\20\f\20\16\20\u00a5\13\20\3\20\2\3\36\21\2\4\6\b\n")
+        buf.write("\f\16\20\22\24\26\30\32\34\36\2\b\4\2 !$$\3\2\21\22\3")
+        buf.write("\2\23\24\3\2\25\26\3\2\16\17\3\2\f\r\2\u00b1\2#\3\2\2")
+        buf.write("\2\4(\3\2\2\2\69\3\2\2\2\bE\3\2\2\2\nG\3\2\2\2\fK\3\2")
+        buf.write("\2\2\16N\3\2\2\2\20V\3\2\2\2\22Y\3\2\2\2\24a\3\2\2\2\26")
+        buf.write("m\3\2\2\2\30s\3\2\2\2\32w\3\2\2\2\34\u0086\3\2\2\2\36")
+        buf.write("\u0096\3\2\2\2 \"\5\4\3\2! \3\2\2\2\"%\3\2\2\2#!\3\2\2")
+        buf.write("\2#$\3\2\2\2$&\3\2\2\2%#\3\2\2\2&\'\7\2\2\3\'\3\3\2\2")
+        buf.write("\2(\60\7\37\2\2)-\7!\2\2*,\7!\2\2+*\3\2\2\2,/\3\2\2\2")
+        buf.write("-+\3\2\2\2-.\3\2\2\2.\61\3\2\2\2/-\3\2\2\2\60)\3\2\2\2")
+        buf.write("\60\61\3\2\2\2\61\62\3\2\2\2\62\63\7\35\2\2\63\64\5\6")
+        buf.write("\4\2\64\65\7\36\2\2\65\5\3\2\2\2\668\5\b\5\2\67\66\3\2")
+        buf.write("\2\28;\3\2\2\29\67\3\2\2\29:\3\2\2\2:\7\3\2\2\2;9\3\2")
+        buf.write("\2\2<F\5\n\6\2=F\5\f\7\2>F\5\16\b\2?F\5\20\t\2@F\5\22")
+        buf.write("\n\2AF\5\24\13\2BF\5\26\f\2CF\5\30\r\2DF\5\32\16\2E<\3")
+        buf.write("\2\2\2E=\3\2\2\2E>\3\2\2\2E?\3\2\2\2E@\3\2\2\2EA\3\2\2")
+        buf.write("\2EB\3\2\2\2EC\3\2\2\2ED\3\2\2\2F\t\3\2\2\2GH\7!\2\2H")
+        buf.write("I\7\3\2\2IJ\5\36\20\2J\13\3\2\2\2KL\7\4\2\2LM\7!\2\2M")
+        buf.write("\r\3\2\2\2NO\7\5\2\2OS\5\36\20\2PR\5\36\20\2QP\3\2\2\2")
+        buf.write("RU\3\2\2\2SQ\3\2\2\2ST\3\2\2\2T\17\3\2\2\2US\3\2\2\2V")
+        buf.write("W\7\6\2\2WX\t\2\2\2X\21\3\2\2\2YZ\7\37\2\2Z^\5\36\20\2")
+        buf.write("[]\5\36\20\2\\[\3\2\2\2]`\3\2\2\2^\\\3\2\2\2^_\3\2\2\2")
+        buf.write("_\23\3\2\2\2`^\3\2\2\2ab\7\7\2\2bc\5\34\17\2cd\7\35\2")
+        buf.write("\2de\5\6\4\2ek\7\36\2\2fg\7\b\2\2gh\7\35\2\2hi\5\6\4\2")
+        buf.write("ij\7\36\2\2jl\3\2\2\2kf\3\2\2\2kl\3\2\2\2l\25\3\2\2\2")
+        buf.write("mn\7\t\2\2no\5\34\17\2op\7\35\2\2pq\5\6\4\2qr\7\36\2\2")
+        buf.write("r\27\3\2\2\2st\7!\2\2tu\7\n\2\2uv\5\36\20\2v\31\3\2\2")
+        buf.write("\2wx\7\13\2\2xy\5\36\20\2y\33\3\2\2\2z{\5\36\20\2{|\t")
+        buf.write("\3\2\2|}\5\36\20\2}\u0087\3\2\2\2~\177\5\36\20\2\177\u0080")
+        buf.write("\t\4\2\2\u0080\u0081\5\36\20\2\u0081\u0087\3\2\2\2\u0082")
+        buf.write("\u0083\5\36\20\2\u0083\u0084\t\5\2\2\u0084\u0085\5\36")
+        buf.write("\20\2\u0085\u0087\3\2\2\2\u0086z\3\2\2\2\u0086~\3\2\2")
+        buf.write("\2\u0086\u0082\3\2\2\2\u0087\35\3\2\2\2\u0088\u0089\b")
+        buf.write("\20\1\2\u0089\u008a\7\27\2\2\u008a\u008b\5\36\20\2\u008b")
+        buf.write("\u008c\7\30\2\2\u008c\u0097\3\2\2\2\u008d\u0097\7$\2\2")
+        buf.write("\u008e\u008f\7!\2\2\u008f\u0090\7\31\2\2\u0090\u0091\7")
+        buf.write("!\2\2\u0091\u0097\7\32\2\2\u0092\u0097\7 \2\2\u0093\u0097")
+        buf.write("\7!\2\2\u0094\u0097\7\"\2\2\u0095\u0097\7#\2\2\u0096\u0088")
+        buf.write("\3\2\2\2\u0096\u008d\3\2\2\2\u0096\u008e\3\2\2\2\u0096")
+        buf.write("\u0092\3\2\2\2\u0096\u0093\3\2\2\2\u0096\u0094\3\2\2\2")
+        buf.write("\u0096\u0095\3\2\2\2\u0097\u00a3\3\2\2\2\u0098\u0099\f")
+        buf.write("\f\2\2\u0099\u009a\t\6\2\2\u009a\u00a2\5\36\20\r\u009b")
+        buf.write("\u009c\f\13\2\2\u009c\u009d\t\7\2\2\u009d\u00a2\5\36\20")
+        buf.write("\f\u009e\u009f\f\n\2\2\u009f\u00a0\7\20\2\2\u00a0\u00a2")
+        buf.write("\5\36\20\13\u00a1\u0098\3\2\2\2\u00a1\u009b\3\2\2\2\u00a1")
+        buf.write("\u009e\3\2\2\2\u00a2\u00a5\3\2\2\2\u00a3\u00a1\3\2\2\2")
+        buf.write("\u00a3\u00a4\3\2\2\2\u00a4\37\3\2\2\2\u00a5\u00a3\3\2")
+        buf.write("\2\2\16#-\609ES^k\u0086\u0096\u00a1\u00a3")
         return buf.getvalue()
 
 
@@ -96,14 +87,15 @@ class jsbachParser ( Parser ):
     literalNames = [ "<INVALID>", "'<-'", "'<?>'", "'<!>'", "'<:>'", "'if'", 
                      "'else'", "'while'", "'<<'", "'8<'", "'+'", "'-'", 
                      "'*'", "'/'", "'%'", "'='", "'/='", "'<'", "'<='", 
-                     "'>'", "'>='", "'('", "')'", "'{'", "'}'", "'|:'", 
-                     "':|'" ]
+                     "'>'", "'>='", "'('", "')'", "'['", "']'", "'{'", "'}'", 
+                     "'|:'", "':|'" ]
 
     symbolicNames = [ "<INVALID>", "ASSIGN", "READ", "WRITE", "PLAY", "IF", 
                       "ELSE", "WHILE", "ADD", "CUT", "PLUS", "MINUS", "MULT", 
                       "DIV", "MOD", "EQ", "NEQ", "LT", "LET", "GT", "GET", 
-                      "LP", "RP", "LB", "RB", "OB", "CB", "PROCNAME", "VAR", 
-                      "NUM", "STRING", "IDENTIFIER", "COMMENT", "WS" ]
+                      "LP", "RP", "LB", "RB", "LCB", "RCB", "OB", "CB", 
+                      "PROCNAME", "NOTE", "VAR", "NUM", "STRING", "LIST", 
+                      "COMMENT", "WS" ]
 
     RULE_root = 0
     RULE_defProc = 1
@@ -114,7 +106,7 @@ class jsbachParser ( Parser ):
     RULE_write = 6
     RULE_play = 7
     RULE_invProc = 8
-    RULE_cond = 9
+    RULE_conditional = 9
     RULE_while_ = 10
     RULE_addList = 11
     RULE_cutList = 12
@@ -122,8 +114,8 @@ class jsbachParser ( Parser ):
     RULE_expr = 14
 
     ruleNames =  [ "root", "defProc", "cjtInstr", "instr", "assign", "read", 
-                   "write", "play", "invProc", "cond", "while_", "addList", 
-                   "cutList", "exprCond", "expr" ]
+                   "write", "play", "invProc", "conditional", "while_", 
+                   "addList", "cutList", "exprCond", "expr" ]
 
     EOF = Token.EOF
     ASSIGN=1
@@ -150,15 +142,18 @@ class jsbachParser ( Parser ):
     RP=22
     LB=23
     RB=24
-    OB=25
-    CB=26
-    PROCNAME=27
-    VAR=28
-    NUM=29
-    STRING=30
-    IDENTIFIER=31
-    COMMENT=32
-    WS=33
+    LCB=25
+    RCB=26
+    OB=27
+    CB=28
+    PROCNAME=29
+    NOTE=30
+    VAR=31
+    NUM=32
+    STRING=33
+    LIST=34
+    COMMENT=35
+    WS=36
 
     def __init__(self, input:TokenStream, output:TextIO = sys.stdout):
         super().__init__(input, output)
@@ -339,7 +334,7 @@ class jsbachParser ( Parser ):
             self.state = 55
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << jsbachParser.READ) | (1 << jsbachParser.WRITE) | (1 << jsbachParser.PLAY) | (1 << jsbachParser.IF) | (1 << jsbachParser.WHILE) | (1 << jsbachParser.PROCNAME) | (1 << jsbachParser.VAR))) != 0):
+            while (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << jsbachParser.READ) | (1 << jsbachParser.WRITE) | (1 << jsbachParser.PLAY) | (1 << jsbachParser.IF) | (1 << jsbachParser.WHILE) | (1 << jsbachParser.CUT) | (1 << jsbachParser.PROCNAME) | (1 << jsbachParser.VAR))) != 0):
                 self.state = 52
                 self.instr()
                 self.state = 57
@@ -381,12 +376,20 @@ class jsbachParser ( Parser ):
             return self.getTypedRuleContext(jsbachParser.InvProcContext,0)
 
 
-        def cond(self):
-            return self.getTypedRuleContext(jsbachParser.CondContext,0)
+        def conditional(self):
+            return self.getTypedRuleContext(jsbachParser.ConditionalContext,0)
 
 
         def while_(self):
             return self.getTypedRuleContext(jsbachParser.While_Context,0)
+
+
+        def addList(self):
+            return self.getTypedRuleContext(jsbachParser.AddListContext,0)
+
+
+        def cutList(self):
+            return self.getTypedRuleContext(jsbachParser.CutListContext,0)
 
 
         def getRuleIndex(self):
@@ -407,39 +410,54 @@ class jsbachParser ( Parser ):
         self.enterRule(localctx, 6, self.RULE_instr)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 65
+            self.state = 67
             self._errHandler.sync(self)
-            token = self._input.LA(1)
-            if token in [jsbachParser.VAR]:
+            la_ = self._interp.adaptivePredict(self._input,4,self._ctx)
+            if la_ == 1:
                 self.state = 58
                 self.assign()
                 pass
-            elif token in [jsbachParser.READ]:
+
+            elif la_ == 2:
                 self.state = 59
                 self.read()
                 pass
-            elif token in [jsbachParser.WRITE]:
+
+            elif la_ == 3:
                 self.state = 60
                 self.write()
                 pass
-            elif token in [jsbachParser.PLAY]:
+
+            elif la_ == 4:
                 self.state = 61
                 self.play()
                 pass
-            elif token in [jsbachParser.PROCNAME]:
+
+            elif la_ == 5:
                 self.state = 62
                 self.invProc()
                 pass
-            elif token in [jsbachParser.IF]:
+
+            elif la_ == 6:
                 self.state = 63
-                self.cond()
+                self.conditional()
                 pass
-            elif token in [jsbachParser.WHILE]:
+
+            elif la_ == 7:
                 self.state = 64
                 self.while_()
                 pass
-            else:
-                raise NoViableAltException(self)
+
+            elif la_ == 8:
+                self.state = 65
+                self.addList()
+                pass
+
+            elif la_ == 9:
+                self.state = 66
+                self.cutList()
+                pass
+
 
         except RecognitionException as re:
             localctx.exception = re
@@ -484,11 +502,11 @@ class jsbachParser ( Parser ):
         self.enterRule(localctx, 8, self.RULE_assign)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 67
-            self.match(jsbachParser.VAR)
-            self.state = 68
-            self.match(jsbachParser.ASSIGN)
             self.state = 69
+            self.match(jsbachParser.VAR)
+            self.state = 70
+            self.match(jsbachParser.ASSIGN)
+            self.state = 71
             self.expr(0)
         except RecognitionException as re:
             localctx.exception = re
@@ -529,9 +547,9 @@ class jsbachParser ( Parser ):
         self.enterRule(localctx, 10, self.RULE_read)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 71
+            self.state = 73
             self.match(jsbachParser.READ)
-            self.state = 72
+            self.state = 74
             self.match(jsbachParser.VAR)
         except RecognitionException as re:
             localctx.exception = re
@@ -576,18 +594,18 @@ class jsbachParser ( Parser ):
         self.enterRule(localctx, 12, self.RULE_write)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 74
+            self.state = 76
             self.match(jsbachParser.WRITE)
-            self.state = 75
+            self.state = 77
             self.expr(0)
-            self.state = 79
+            self.state = 81
             self._errHandler.sync(self)
             _alt = self._interp.adaptivePredict(self._input,5,self._ctx)
             while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
                 if _alt==1:
-                    self.state = 76
+                    self.state = 78
                     self.expr(0) 
-                self.state = 81
+                self.state = 83
                 self._errHandler.sync(self)
                 _alt = self._interp.adaptivePredict(self._input,5,self._ctx)
 
@@ -609,9 +627,14 @@ class jsbachParser ( Parser ):
         def PLAY(self):
             return self.getToken(jsbachParser.PLAY, 0)
 
-        def expr(self):
-            return self.getTypedRuleContext(jsbachParser.ExprContext,0)
+        def VAR(self):
+            return self.getToken(jsbachParser.VAR, 0)
 
+        def NOTE(self):
+            return self.getToken(jsbachParser.NOTE, 0)
+
+        def LIST(self):
+            return self.getToken(jsbachParser.LIST, 0)
 
         def getRuleIndex(self):
             return jsbachParser.RULE_play
@@ -629,12 +652,18 @@ class jsbachParser ( Parser ):
 
         localctx = jsbachParser.PlayContext(self, self._ctx, self.state)
         self.enterRule(localctx, 14, self.RULE_play)
+        self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 82
+            self.state = 84
             self.match(jsbachParser.PLAY)
-            self.state = 83
-            self.expr(0)
+            self.state = 85
+            _la = self._input.LA(1)
+            if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << jsbachParser.NOTE) | (1 << jsbachParser.VAR) | (1 << jsbachParser.LIST))) != 0)):
+                self._errHandler.recoverInline(self)
+            else:
+                self._errHandler.reportMatch(self)
+                self.consume()
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -678,26 +707,21 @@ class jsbachParser ( Parser ):
         self.enterRule(localctx, 16, self.RULE_invProc)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 85
+            self.state = 87
             self.match(jsbachParser.PROCNAME)
-            self.state = 93
+
+            self.state = 88
+            self.expr(0)
+            self.state = 92
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,7,self._ctx)
-            if la_ == 1:
-                self.state = 86
-                self.expr(0)
-                self.state = 90
+            _alt = self._interp.adaptivePredict(self._input,6,self._ctx)
+            while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
+                if _alt==1:
+                    self.state = 89
+                    self.expr(0) 
+                self.state = 94
                 self._errHandler.sync(self)
                 _alt = self._interp.adaptivePredict(self._input,6,self._ctx)
-                while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
-                    if _alt==1:
-                        self.state = 87
-                        self.expr(0) 
-                    self.state = 92
-                    self._errHandler.sync(self)
-                    _alt = self._interp.adaptivePredict(self._input,6,self._ctx)
-
-
 
         except RecognitionException as re:
             localctx.exception = re
@@ -708,7 +732,7 @@ class jsbachParser ( Parser ):
         return localctx
 
 
-    class CondContext(ParserRuleContext):
+    class ConditionalContext(ParserRuleContext):
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -744,21 +768,22 @@ class jsbachParser ( Parser ):
             return self.getToken(jsbachParser.ELSE, 0)
 
         def getRuleIndex(self):
-            return jsbachParser.RULE_cond
+            return jsbachParser.RULE_conditional
 
         def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitCond" ):
-                return visitor.visitCond(self)
+            if hasattr( visitor, "visitConditional" ):
+                return visitor.visitConditional(self)
             else:
                 return visitor.visitChildren(self)
 
 
 
 
-    def cond(self):
+    def conditional(self):
 
-        localctx = jsbachParser.CondContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 18, self.RULE_cond)
+        localctx = jsbachParser.ConditionalContext(self, self._ctx, self.state)
+        self.enterRule(localctx, 18, self.RULE_conditional)
+        self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 95
@@ -771,15 +796,20 @@ class jsbachParser ( Parser ):
             self.cjtInstr()
             self.state = 99
             self.match(jsbachParser.CB)
+            self.state = 105
+            self._errHandler.sync(self)
+            _la = self._input.LA(1)
+            if _la==jsbachParser.ELSE:
+                self.state = 100
+                self.match(jsbachParser.ELSE)
+                self.state = 101
+                self.match(jsbachParser.OB)
+                self.state = 102
+                self.cjtInstr()
+                self.state = 103
+                self.match(jsbachParser.CB)
 
-            self.state = 100
-            self.match(jsbachParser.ELSE)
-            self.state = 101
-            self.match(jsbachParser.OB)
-            self.state = 102
-            self.cjtInstr()
-            self.state = 103
-            self.match(jsbachParser.CB)
+
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -830,15 +860,15 @@ class jsbachParser ( Parser ):
         self.enterRule(localctx, 20, self.RULE_while_)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 105
-            self.match(jsbachParser.WHILE)
-            self.state = 106
-            self.exprCond()
             self.state = 107
-            self.match(jsbachParser.OB)
+            self.match(jsbachParser.WHILE)
             self.state = 108
-            self.cjtInstr()
+            self.exprCond()
             self.state = 109
+            self.match(jsbachParser.OB)
+            self.state = 110
+            self.cjtInstr()
+            self.state = 111
             self.match(jsbachParser.CB)
         except RecognitionException as re:
             localctx.exception = re
@@ -854,6 +884,9 @@ class jsbachParser ( Parser ):
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
+
+        def VAR(self):
+            return self.getToken(jsbachParser.VAR, 0)
 
         def ADD(self):
             return self.getToken(jsbachParser.ADD, 0)
@@ -880,9 +913,11 @@ class jsbachParser ( Parser ):
         self.enterRule(localctx, 22, self.RULE_addList)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 111
+            self.state = 113
+            self.match(jsbachParser.VAR)
+            self.state = 114
             self.match(jsbachParser.ADD)
-            self.state = 112
+            self.state = 115
             self.expr(0)
         except RecognitionException as re:
             localctx.exception = re
@@ -924,9 +959,9 @@ class jsbachParser ( Parser ):
         self.enterRule(localctx, 24, self.RULE_cutList)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 114
+            self.state = 117
             self.match(jsbachParser.CUT)
-            self.state = 115
+            self.state = 118
             self.expr(0)
         except RecognitionException as re:
             localctx.exception = re
@@ -953,76 +988,13 @@ class jsbachParser ( Parser ):
 
 
 
-    class GrEqThanContext(ExprCondContext):
+    class CondContext(ExprCondContext):
 
         def __init__(self, parser, ctx:ParserRuleContext): # actually a jsbachParser.ExprCondContext
             super().__init__(parser)
-            self.copyFrom(ctx)
-
-        def expr(self, i:int=None):
-            if i is None:
-                return self.getTypedRuleContexts(jsbachParser.ExprContext)
-            else:
-                return self.getTypedRuleContext(jsbachParser.ExprContext,i)
-
-        def GET(self):
-            return self.getToken(jsbachParser.GET, 0)
-
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitGrEqThan" ):
-                return visitor.visitGrEqThan(self)
-            else:
-                return visitor.visitChildren(self)
-
-
-    class LessThanContext(ExprCondContext):
-
-        def __init__(self, parser, ctx:ParserRuleContext): # actually a jsbachParser.ExprCondContext
-            super().__init__(parser)
-            self.copyFrom(ctx)
-
-        def expr(self, i:int=None):
-            if i is None:
-                return self.getTypedRuleContexts(jsbachParser.ExprContext)
-            else:
-                return self.getTypedRuleContext(jsbachParser.ExprContext,i)
-
-        def LT(self):
-            return self.getToken(jsbachParser.LT, 0)
-
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitLessThan" ):
-                return visitor.visitLessThan(self)
-            else:
-                return visitor.visitChildren(self)
-
-
-    class NotEqualContext(ExprCondContext):
-
-        def __init__(self, parser, ctx:ParserRuleContext): # actually a jsbachParser.ExprCondContext
-            super().__init__(parser)
-            self.copyFrom(ctx)
-
-        def expr(self, i:int=None):
-            if i is None:
-                return self.getTypedRuleContexts(jsbachParser.ExprContext)
-            else:
-                return self.getTypedRuleContext(jsbachParser.ExprContext,i)
-
-        def NEQ(self):
-            return self.getToken(jsbachParser.NEQ, 0)
-
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitNotEqual" ):
-                return visitor.visitNotEqual(self)
-            else:
-                return visitor.visitChildren(self)
-
-
-    class EqualContext(ExprCondContext):
-
-        def __init__(self, parser, ctx:ParserRuleContext): # actually a jsbachParser.ExprCondContext
-            super().__init__(parser)
+            self.left = None # ExprContext
+            self.op = None # Token
+            self.right = None # ExprContext
             self.copyFrom(ctx)
 
         def expr(self, i:int=None):
@@ -1033,54 +1005,20 @@ class jsbachParser ( Parser ):
 
         def EQ(self):
             return self.getToken(jsbachParser.EQ, 0)
-
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitEqual" ):
-                return visitor.visitEqual(self)
-            else:
-                return visitor.visitChildren(self)
-
-
-    class LessEqThanContext(ExprCondContext):
-
-        def __init__(self, parser, ctx:ParserRuleContext): # actually a jsbachParser.ExprCondContext
-            super().__init__(parser)
-            self.copyFrom(ctx)
-
-        def expr(self, i:int=None):
-            if i is None:
-                return self.getTypedRuleContexts(jsbachParser.ExprContext)
-            else:
-                return self.getTypedRuleContext(jsbachParser.ExprContext,i)
-
+        def NEQ(self):
+            return self.getToken(jsbachParser.NEQ, 0)
+        def LT(self):
+            return self.getToken(jsbachParser.LT, 0)
         def LET(self):
             return self.getToken(jsbachParser.LET, 0)
-
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitLessEqThan" ):
-                return visitor.visitLessEqThan(self)
-            else:
-                return visitor.visitChildren(self)
-
-
-    class GrThanContext(ExprCondContext):
-
-        def __init__(self, parser, ctx:ParserRuleContext): # actually a jsbachParser.ExprCondContext
-            super().__init__(parser)
-            self.copyFrom(ctx)
-
-        def expr(self, i:int=None):
-            if i is None:
-                return self.getTypedRuleContexts(jsbachParser.ExprContext)
-            else:
-                return self.getTypedRuleContext(jsbachParser.ExprContext,i)
-
         def GT(self):
             return self.getToken(jsbachParser.GT, 0)
+        def GET(self):
+            return self.getToken(jsbachParser.GET, 0)
 
         def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitGrThan" ):
-                return visitor.visitGrThan(self)
+            if hasattr( visitor, "visitCond" ):
+                return visitor.visitCond(self)
             else:
                 return visitor.visitChildren(self)
 
@@ -1090,74 +1028,60 @@ class jsbachParser ( Parser ):
 
         localctx = jsbachParser.ExprCondContext(self, self._ctx, self.state)
         self.enterRule(localctx, 26, self.RULE_exprCond)
+        self._la = 0 # Token type
         try:
-            self.state = 141
+            self.state = 132
             self._errHandler.sync(self)
             la_ = self._interp.adaptivePredict(self._input,8,self._ctx)
             if la_ == 1:
-                localctx = jsbachParser.EqualContext(self, localctx)
+                localctx = jsbachParser.CondContext(self, localctx)
                 self.enterOuterAlt(localctx, 1)
-                self.state = 117
-                self.expr(0)
-                self.state = 118
-                self.match(jsbachParser.EQ)
-                self.state = 119
-                self.expr(0)
+                self.state = 120
+                localctx.left = self.expr(0)
+                self.state = 121
+                localctx.op = self._input.LT(1)
+                _la = self._input.LA(1)
+                if not(_la==jsbachParser.EQ or _la==jsbachParser.NEQ):
+                    localctx.op = self._errHandler.recoverInline(self)
+                else:
+                    self._errHandler.reportMatch(self)
+                    self.consume()
+                self.state = 122
+                localctx.right = self.expr(0)
                 pass
 
             elif la_ == 2:
-                localctx = jsbachParser.NotEqualContext(self, localctx)
+                localctx = jsbachParser.CondContext(self, localctx)
                 self.enterOuterAlt(localctx, 2)
-                self.state = 121
-                self.expr(0)
-                self.state = 122
-                self.match(jsbachParser.NEQ)
-                self.state = 123
-                self.expr(0)
+                self.state = 124
+                localctx.left = self.expr(0)
+                self.state = 125
+                localctx.op = self._input.LT(1)
+                _la = self._input.LA(1)
+                if not(_la==jsbachParser.LT or _la==jsbachParser.LET):
+                    localctx.op = self._errHandler.recoverInline(self)
+                else:
+                    self._errHandler.reportMatch(self)
+                    self.consume()
+                self.state = 126
+                localctx.right = self.expr(0)
                 pass
 
             elif la_ == 3:
-                localctx = jsbachParser.LessThanContext(self, localctx)
+                localctx = jsbachParser.CondContext(self, localctx)
                 self.enterOuterAlt(localctx, 3)
-                self.state = 125
-                self.expr(0)
-                self.state = 126
-                self.match(jsbachParser.LT)
-                self.state = 127
-                self.expr(0)
-                pass
-
-            elif la_ == 4:
-                localctx = jsbachParser.LessEqThanContext(self, localctx)
-                self.enterOuterAlt(localctx, 4)
+                self.state = 128
+                localctx.left = self.expr(0)
                 self.state = 129
-                self.expr(0)
+                localctx.op = self._input.LT(1)
+                _la = self._input.LA(1)
+                if not(_la==jsbachParser.GT or _la==jsbachParser.GET):
+                    localctx.op = self._errHandler.recoverInline(self)
+                else:
+                    self._errHandler.reportMatch(self)
+                    self.consume()
                 self.state = 130
-                self.match(jsbachParser.LET)
-                self.state = 131
-                self.expr(0)
-                pass
-
-            elif la_ == 5:
-                localctx = jsbachParser.GrThanContext(self, localctx)
-                self.enterOuterAlt(localctx, 5)
-                self.state = 133
-                self.expr(0)
-                self.state = 134
-                self.match(jsbachParser.GT)
-                self.state = 135
-                self.expr(0)
-                pass
-
-            elif la_ == 6:
-                localctx = jsbachParser.GrEqThanContext(self, localctx)
-                self.enterOuterAlt(localctx, 6)
-                self.state = 137
-                self.expr(0)
-                self.state = 138
-                self.match(jsbachParser.GET)
-                self.state = 139
-                self.expr(0)
+                localctx.right = self.expr(0)
                 pass
 
 
@@ -1201,89 +1125,57 @@ class jsbachParser ( Parser ):
                 return visitor.visitChildren(self)
 
 
-    class SumaContext(ExprContext):
+    class NumbersContext(ExprContext):
 
         def __init__(self, parser, ctx:ParserRuleContext): # actually a jsbachParser.ExprContext
             super().__init__(parser)
             self.copyFrom(ctx)
 
-        def expr(self, i:int=None):
-            if i is None:
-                return self.getTypedRuleContexts(jsbachParser.ExprContext)
-            else:
-                return self.getTypedRuleContext(jsbachParser.ExprContext,i)
-
-        def PLUS(self):
-            return self.getToken(jsbachParser.PLUS, 0)
+        def NUM(self):
+            return self.getToken(jsbachParser.NUM, 0)
 
         def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitSuma" ):
-                return visitor.visitSuma(self)
+            if hasattr( visitor, "visitNumbers" ):
+                return visitor.visitNumbers(self)
             else:
                 return visitor.visitChildren(self)
 
 
-    class DivisioContext(ExprContext):
+    class NoteContext(ExprContext):
 
         def __init__(self, parser, ctx:ParserRuleContext): # actually a jsbachParser.ExprContext
             super().__init__(parser)
             self.copyFrom(ctx)
 
-        def expr(self, i:int=None):
-            if i is None:
-                return self.getTypedRuleContexts(jsbachParser.ExprContext)
-            else:
-                return self.getTypedRuleContext(jsbachParser.ExprContext,i)
-
-        def DIV(self):
-            return self.getToken(jsbachParser.DIV, 0)
+        def NOTE(self):
+            return self.getToken(jsbachParser.NOTE, 0)
 
         def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitDivisio" ):
-                return visitor.visitDivisio(self)
+            if hasattr( visitor, "visitNote" ):
+                return visitor.visitNote(self)
             else:
                 return visitor.visitChildren(self)
 
 
-    class ParentesisContext(ExprContext):
+    class ListElementContext(ExprContext):
 
         def __init__(self, parser, ctx:ParserRuleContext): # actually a jsbachParser.ExprContext
             super().__init__(parser)
             self.copyFrom(ctx)
 
-        def LP(self):
-            return self.getToken(jsbachParser.LP, 0)
-        def expr(self):
-            return self.getTypedRuleContext(jsbachParser.ExprContext,0)
-
-        def RP(self):
-            return self.getToken(jsbachParser.RP, 0)
-
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitParentesis" ):
-                return visitor.visitParentesis(self)
-            else:
-                return visitor.visitChildren(self)
-
-
-    class MultiplicacioContext(ExprContext):
-
-        def __init__(self, parser, ctx:ParserRuleContext): # actually a jsbachParser.ExprContext
-            super().__init__(parser)
-            self.copyFrom(ctx)
-
-        def expr(self, i:int=None):
+        def VAR(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(jsbachParser.ExprContext)
+                return self.getTokens(jsbachParser.VAR)
             else:
-                return self.getTypedRuleContext(jsbachParser.ExprContext,i)
-
-        def MULT(self):
-            return self.getToken(jsbachParser.MULT, 0)
+                return self.getToken(jsbachParser.VAR, i)
+        def LB(self):
+            return self.getToken(jsbachParser.LB, 0)
+        def RB(self):
+            return self.getToken(jsbachParser.RB, 0)
 
         def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitMultiplicacio" ):
-                return visitor.visitMultiplicacio(self)
+            if hasattr( visitor, "visitListElement" ):
+                return visitor.visitListElement(self)
             else:
                 return visitor.visitChildren(self)
 
@@ -1292,6 +1184,9 @@ class jsbachParser ( Parser ):
 
         def __init__(self, parser, ctx:ParserRuleContext): # actually a jsbachParser.ExprContext
             super().__init__(parser)
+            self.left = None # ExprContext
+            self.op = None # Token
+            self.right = None # ExprContext
             self.copyFrom(ctx)
 
         def expr(self, i:int=None):
@@ -1310,42 +1205,49 @@ class jsbachParser ( Parser ):
                 return visitor.visitChildren(self)
 
 
-    class LlistesContext(ExprContext):
+    class ListContext(ExprContext):
 
         def __init__(self, parser, ctx:ParserRuleContext): # actually a jsbachParser.ExprContext
             super().__init__(parser)
             self.copyFrom(ctx)
 
-        def LB(self):
-            return self.getToken(jsbachParser.LB, 0)
-        def RB(self):
-            return self.getToken(jsbachParser.RB, 0)
+        def LIST(self):
+            return self.getToken(jsbachParser.LIST, 0)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitList" ):
+                return visitor.visitList(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+    class InfixOpContext(ExprContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a jsbachParser.ExprContext
+            super().__init__(parser)
+            self.left = None # ExprContext
+            self.op = None # Token
+            self.right = None # ExprContext
+            self.copyFrom(ctx)
+
         def expr(self, i:int=None):
             if i is None:
                 return self.getTypedRuleContexts(jsbachParser.ExprContext)
             else:
                 return self.getTypedRuleContext(jsbachParser.ExprContext,i)
 
+        def MULT(self):
+            return self.getToken(jsbachParser.MULT, 0)
+        def DIV(self):
+            return self.getToken(jsbachParser.DIV, 0)
+        def PLUS(self):
+            return self.getToken(jsbachParser.PLUS, 0)
+        def MINUS(self):
+            return self.getToken(jsbachParser.MINUS, 0)
 
         def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitLlistes" ):
-                return visitor.visitLlistes(self)
-            else:
-                return visitor.visitChildren(self)
-
-
-    class NumerosContext(ExprContext):
-
-        def __init__(self, parser, ctx:ParserRuleContext): # actually a jsbachParser.ExprContext
-            super().__init__(parser)
-            self.copyFrom(ctx)
-
-        def NUM(self):
-            return self.getToken(jsbachParser.NUM, 0)
-
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitNumeros" ):
-                return visitor.visitNumeros(self)
+            if hasattr( visitor, "visitInfixOp" ):
+                return visitor.visitInfixOp(self)
             else:
                 return visitor.visitChildren(self)
 
@@ -1366,24 +1268,23 @@ class jsbachParser ( Parser ):
                 return visitor.visitChildren(self)
 
 
-    class RestaContext(ExprContext):
+    class ParenContext(ExprContext):
 
         def __init__(self, parser, ctx:ParserRuleContext): # actually a jsbachParser.ExprContext
             super().__init__(parser)
             self.copyFrom(ctx)
 
-        def expr(self, i:int=None):
-            if i is None:
-                return self.getTypedRuleContexts(jsbachParser.ExprContext)
-            else:
-                return self.getTypedRuleContext(jsbachParser.ExprContext,i)
+        def LP(self):
+            return self.getToken(jsbachParser.LP, 0)
+        def expr(self):
+            return self.getTypedRuleContext(jsbachParser.ExprContext,0)
 
-        def MINUS(self):
-            return self.getToken(jsbachParser.MINUS, 0)
+        def RP(self):
+            return self.getToken(jsbachParser.RP, 0)
 
         def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitResta" ):
-                return visitor.visitResta(self)
+            if hasattr( visitor, "visitParen" ):
+                return visitor.visitParen(self)
             else:
                 return visitor.visitChildren(self)
 
@@ -1399,145 +1300,147 @@ class jsbachParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 159
+            self.state = 148
             self._errHandler.sync(self)
-            token = self._input.LA(1)
-            if token in [jsbachParser.LP]:
-                localctx = jsbachParser.ParentesisContext(self, localctx)
+            la_ = self._interp.adaptivePredict(self._input,9,self._ctx)
+            if la_ == 1:
+                localctx = jsbachParser.ParenContext(self, localctx)
                 self._ctx = localctx
                 _prevctx = localctx
 
-                self.state = 144
+                self.state = 135
                 self.match(jsbachParser.LP)
-                self.state = 145
+                self.state = 136
                 self.expr(0)
-                self.state = 146
+                self.state = 137
                 self.match(jsbachParser.RP)
                 pass
-            elif token in [jsbachParser.LB]:
-                localctx = jsbachParser.LlistesContext(self, localctx)
+
+            elif la_ == 2:
+                localctx = jsbachParser.ListContext(self, localctx)
                 self._ctx = localctx
                 _prevctx = localctx
-                self.state = 148
-                self.match(jsbachParser.LB)
-                self.state = 152
-                self._errHandler.sync(self)
-                _la = self._input.LA(1)
-                while (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << jsbachParser.LP) | (1 << jsbachParser.LB) | (1 << jsbachParser.VAR) | (1 << jsbachParser.NUM) | (1 << jsbachParser.STRING))) != 0):
-                    self.state = 149
-                    self.expr(0)
-                    self.state = 154
-                    self._errHandler.sync(self)
-                    _la = self._input.LA(1)
+                self.state = 139
+                self.match(jsbachParser.LIST)
+                pass
 
-                self.state = 155
+            elif la_ == 3:
+                localctx = jsbachParser.ListElementContext(self, localctx)
+                self._ctx = localctx
+                _prevctx = localctx
+                self.state = 140
+                self.match(jsbachParser.VAR)
+                self.state = 141
+                self.match(jsbachParser.LB)
+                self.state = 142
+                self.match(jsbachParser.VAR)
+                self.state = 143
                 self.match(jsbachParser.RB)
                 pass
-            elif token in [jsbachParser.VAR]:
+
+            elif la_ == 4:
+                localctx = jsbachParser.NoteContext(self, localctx)
+                self._ctx = localctx
+                _prevctx = localctx
+                self.state = 144
+                self.match(jsbachParser.NOTE)
+                pass
+
+            elif la_ == 5:
                 localctx = jsbachParser.VariablesContext(self, localctx)
                 self._ctx = localctx
                 _prevctx = localctx
-                self.state = 156
+                self.state = 145
                 self.match(jsbachParser.VAR)
                 pass
-            elif token in [jsbachParser.NUM]:
-                localctx = jsbachParser.NumerosContext(self, localctx)
+
+            elif la_ == 6:
+                localctx = jsbachParser.NumbersContext(self, localctx)
                 self._ctx = localctx
                 _prevctx = localctx
-                self.state = 157
+                self.state = 146
                 self.match(jsbachParser.NUM)
                 pass
-            elif token in [jsbachParser.STRING]:
+
+            elif la_ == 7:
                 localctx = jsbachParser.StringsContext(self, localctx)
                 self._ctx = localctx
                 _prevctx = localctx
-                self.state = 158
+                self.state = 147
                 self.match(jsbachParser.STRING)
                 pass
-            else:
-                raise NoViableAltException(self)
+
 
             self._ctx.stop = self._input.LT(-1)
-            self.state = 178
+            self.state = 161
             self._errHandler.sync(self)
-            _alt = self._interp.adaptivePredict(self._input,12,self._ctx)
+            _alt = self._interp.adaptivePredict(self._input,11,self._ctx)
             while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
                 if _alt==1:
                     if self._parseListeners is not None:
                         self.triggerExitRuleEvent()
                     _prevctx = localctx
-                    self.state = 176
+                    self.state = 159
                     self._errHandler.sync(self)
-                    la_ = self._interp.adaptivePredict(self._input,11,self._ctx)
+                    la_ = self._interp.adaptivePredict(self._input,10,self._ctx)
                     if la_ == 1:
-                        localctx = jsbachParser.MultiplicacioContext(self, jsbachParser.ExprContext(self, _parentctx, _parentState))
+                        localctx = jsbachParser.InfixOpContext(self, jsbachParser.ExprContext(self, _parentctx, _parentState))
+                        localctx.left = _prevctx
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_expr)
-                        self.state = 161
+                        self.state = 150
                         if not self.precpred(self._ctx, 10):
                             from antlr4.error.Errors import FailedPredicateException
                             raise FailedPredicateException(self, "self.precpred(self._ctx, 10)")
-                        self.state = 162
-                        self.match(jsbachParser.MULT)
-                        self.state = 163
-                        self.expr(11)
+                        self.state = 151
+                        localctx.op = self._input.LT(1)
+                        _la = self._input.LA(1)
+                        if not(_la==jsbachParser.MULT or _la==jsbachParser.DIV):
+                            localctx.op = self._errHandler.recoverInline(self)
+                        else:
+                            self._errHandler.reportMatch(self)
+                            self.consume()
+                        self.state = 152
+                        localctx.right = self.expr(11)
                         pass
 
                     elif la_ == 2:
-                        localctx = jsbachParser.DivisioContext(self, jsbachParser.ExprContext(self, _parentctx, _parentState))
+                        localctx = jsbachParser.InfixOpContext(self, jsbachParser.ExprContext(self, _parentctx, _parentState))
+                        localctx.left = _prevctx
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_expr)
-                        self.state = 164
+                        self.state = 153
                         if not self.precpred(self._ctx, 9):
                             from antlr4.error.Errors import FailedPredicateException
                             raise FailedPredicateException(self, "self.precpred(self._ctx, 9)")
-                        self.state = 165
-                        self.match(jsbachParser.DIV)
-                        self.state = 166
-                        self.expr(10)
+                        self.state = 154
+                        localctx.op = self._input.LT(1)
+                        _la = self._input.LA(1)
+                        if not(_la==jsbachParser.PLUS or _la==jsbachParser.MINUS):
+                            localctx.op = self._errHandler.recoverInline(self)
+                        else:
+                            self._errHandler.reportMatch(self)
+                            self.consume()
+                        self.state = 155
+                        localctx.right = self.expr(10)
                         pass
 
                     elif la_ == 3:
                         localctx = jsbachParser.ModulContext(self, jsbachParser.ExprContext(self, _parentctx, _parentState))
+                        localctx.left = _prevctx
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_expr)
-                        self.state = 167
+                        self.state = 156
                         if not self.precpred(self._ctx, 8):
                             from antlr4.error.Errors import FailedPredicateException
                             raise FailedPredicateException(self, "self.precpred(self._ctx, 8)")
-                        self.state = 168
-                        self.match(jsbachParser.MOD)
-                        self.state = 169
-                        self.expr(9)
-                        pass
-
-                    elif la_ == 4:
-                        localctx = jsbachParser.SumaContext(self, jsbachParser.ExprContext(self, _parentctx, _parentState))
-                        self.pushNewRecursionContext(localctx, _startState, self.RULE_expr)
-                        self.state = 170
-                        if not self.precpred(self._ctx, 7):
-                            from antlr4.error.Errors import FailedPredicateException
-                            raise FailedPredicateException(self, "self.precpred(self._ctx, 7)")
-                        self.state = 171
-                        self.match(jsbachParser.PLUS)
-                        self.state = 172
-                        self.expr(8)
-                        pass
-
-                    elif la_ == 5:
-                        localctx = jsbachParser.RestaContext(self, jsbachParser.ExprContext(self, _parentctx, _parentState))
-                        self.pushNewRecursionContext(localctx, _startState, self.RULE_expr)
-                        self.state = 173
-                        if not self.precpred(self._ctx, 6):
-                            from antlr4.error.Errors import FailedPredicateException
-                            raise FailedPredicateException(self, "self.precpred(self._ctx, 6)")
-                        self.state = 174
-                        self.match(jsbachParser.MINUS)
-                        self.state = 175
-                        self.expr(7)
+                        self.state = 157
+                        localctx.op = self.match(jsbachParser.MOD)
+                        self.state = 158
+                        localctx.right = self.expr(9)
                         pass
 
              
-                self.state = 180
+                self.state = 163
                 self._errHandler.sync(self)
-                _alt = self._interp.adaptivePredict(self._input,12,self._ctx)
+                _alt = self._interp.adaptivePredict(self._input,11,self._ctx)
 
         except RecognitionException as re:
             localctx.exception = re
@@ -1570,14 +1473,6 @@ class jsbachParser ( Parser ):
 
             if predIndex == 2:
                 return self.precpred(self._ctx, 8)
-         
-
-            if predIndex == 3:
-                return self.precpred(self._ctx, 7)
-         
-
-            if predIndex == 4:
-                return self.precpred(self._ctx, 6)
          
 
 

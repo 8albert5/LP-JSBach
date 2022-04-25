@@ -54,8 +54,8 @@ class jsbachVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by jsbachParser#cond.
-    def visitCond(self, ctx:jsbachParser.CondContext):
+    # Visit a parse tree produced by jsbachParser#conditional.
+    def visitConditional(self, ctx:jsbachParser.ConditionalContext):
         return self.visitChildren(ctx)
 
 
@@ -74,33 +74,8 @@ class jsbachVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by jsbachParser#Equal.
-    def visitEqual(self, ctx:jsbachParser.EqualContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by jsbachParser#NotEqual.
-    def visitNotEqual(self, ctx:jsbachParser.NotEqualContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by jsbachParser#LessThan.
-    def visitLessThan(self, ctx:jsbachParser.LessThanContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by jsbachParser#LessEqThan.
-    def visitLessEqThan(self, ctx:jsbachParser.LessEqThanContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by jsbachParser#GrThan.
-    def visitGrThan(self, ctx:jsbachParser.GrThanContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by jsbachParser#GrEqThan.
-    def visitGrEqThan(self, ctx:jsbachParser.GrEqThanContext):
+    # Visit a parse tree produced by jsbachParser#Cond.
+    def visitCond(self, ctx:jsbachParser.CondContext):
         return self.visitChildren(ctx)
 
 
@@ -109,23 +84,18 @@ class jsbachVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by jsbachParser#Suma.
-    def visitSuma(self, ctx:jsbachParser.SumaContext):
+    # Visit a parse tree produced by jsbachParser#Numbers.
+    def visitNumbers(self, ctx:jsbachParser.NumbersContext):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by jsbachParser#Divisio.
-    def visitDivisio(self, ctx:jsbachParser.DivisioContext):
+    # Visit a parse tree produced by jsbachParser#Note.
+    def visitNote(self, ctx:jsbachParser.NoteContext):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by jsbachParser#Parentesis.
-    def visitParentesis(self, ctx:jsbachParser.ParentesisContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by jsbachParser#Multiplicacio.
-    def visitMultiplicacio(self, ctx:jsbachParser.MultiplicacioContext):
+    # Visit a parse tree produced by jsbachParser#ListElement.
+    def visitListElement(self, ctx:jsbachParser.ListElementContext):
         return self.visitChildren(ctx)
 
 
@@ -134,13 +104,13 @@ class jsbachVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by jsbachParser#Llistes.
-    def visitLlistes(self, ctx:jsbachParser.LlistesContext):
+    # Visit a parse tree produced by jsbachParser#List.
+    def visitList(self, ctx:jsbachParser.ListContext):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by jsbachParser#Numeros.
-    def visitNumeros(self, ctx:jsbachParser.NumerosContext):
+    # Visit a parse tree produced by jsbachParser#InfixOp.
+    def visitInfixOp(self, ctx:jsbachParser.InfixOpContext):
         return self.visitChildren(ctx)
 
 
@@ -149,8 +119,8 @@ class jsbachVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by jsbachParser#Resta.
-    def visitResta(self, ctx:jsbachParser.RestaContext):
+    # Visit a parse tree produced by jsbachParser#Paren.
+    def visitParen(self, ctx:jsbachParser.ParenContext):
         return self.visitChildren(ctx)
 
 

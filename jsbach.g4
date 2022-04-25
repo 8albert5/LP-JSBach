@@ -1,4 +1,7 @@
 grammar jsbach;
+
+/* PARSER RULES */
+
 root: defProc* EOF;
 
 defProc: PROCNAME (VAR (VAR)*)? OB cjtInstr CB;
@@ -9,12 +12,10 @@ instr: (assign
     | write
     | play
     | invProc
-    | cond
+    | conditional
     | while_
-    /*
     | addList
     | cutList
-     */
     )
     ;
 
@@ -24,39 +25,37 @@ read: READ VAR;
 
 write: WRITE expr (expr)*;
 
-play: PLAY expr;
+play: PLAY (VAR | NOTE | LIST);
 
-invProc: PROCNAME (expr (expr)*)? ;
+invProc: PROCNAME (expr (expr)*) ;
 
-cond: IF exprCond OB cjtInstr CB (ELSE OB cjtInstr CB);
+conditional: IF exprCond OB cjtInstr CB (ELSE OB cjtInstr CB)?;
 
 while_: WHILE exprCond OB cjtInstr CB;
 
-addList: ADD expr;
+addList: VAR ADD expr;
 
 cutList: CUT expr;
 
-exprCond: expr EQ expr  #Equal
-    | expr NEQ expr     #NotEqual
-    | expr LT expr      #LessThan
-    | expr LET expr     #LessEqThan
-    | expr GT expr      #GrThan
-    | expr GET expr     #GrEqThan
-    ;
+exprCond: left=expr op=(EQ | NEQ) right=expr    #Cond
+        | left=expr op=(LT | LET) right=expr    #Cond
+        | left=expr op=(GT | GET) right=expr    #Cond
+        ;
 
 
-
-expr: expr MULT expr    #Multiplicacio
-    | expr DIV expr     #Divisio
-    | expr MOD expr     #Modul
-    | expr PLUS expr    #Suma
-    | expr MINUS expr   #Resta
-    | LP expr RP        #Parentesis
-    | LB (expr)* RB     #Llistes
+expr: left=expr op=(MULT | DIV) right=expr      #InfixOp
+    | left=expr op=(PLUS | MINUS) right=expr    #InfixOp
+    | left=expr op=MOD right=expr               #Modul
+    | LP expr RP        #Paren
+    | LIST              #List
+    | VAR LB VAR RB     #ListElement
+    | NOTE              #Note
     | VAR               #Variables
-    | NUM               #Numeros
+    | NUM               #Numbers
     | STRING            #Strings
     ;
+
+/* LEXER RULES */
 
 /* Instruccions de JSBach */
 ASSIGN: '<-';
@@ -84,22 +83,25 @@ LET: '<=';
 GT: '>';
 GET: '>=';
 
-/* Altres tokens */
-LP: '(';
-RP: ')';
-LB: '{';
-RB: '}';
-OB: '|:'; // Open Block
-CB: ':|'; // Close Block
-
+/* Bracket tokens */
+LP: '(';    // Left Parentesis
+RP: ')';    // Right Parentesis
+LB: '[';    // Left Bracket
+RB: ']';    // Right Bracket
+LCB: '{';   // Left Curly Bracket
+RCB: '}';   // Right Curly Bracket
+OB: '|:';   // Open Block
+CB: ':|';   // Close Block
 
 PROCNAME: [A-Z][a-zA-Z0-9]*;
-VAR: [a-zA-Z][a-zA-Z0-9]*;
+NOTE: [A-F]([0-8])?;
+VAR: '#'?[a-zA-Z][a-zA-Z0-9]*;
 NUM: '-'?[0-9]+('.'[0-9]+)?;
 STRING: '"' .*? '"';
+LIST: LCB (NOTE (NOTE)*)? RCB;
 
 /* Handle words that are not keywords */
-IDENTIFIER: [a-zA-Z]+;
+// IDENTIFIER: [a-zA-Z]+;
 
 COMMENT: '~~~' .*? '~~~' -> skip;
-WS: [ \t\r\n]+ -> channel(HIDDEN);
+WS: [ \t\r\n]+ -> skip;

@@ -45,7 +45,7 @@ exprCond: left=expr op=(EQ | NEQ) right=expr    #Cond
 
 expr: left=expr op=(MULT | DIV) right=expr      #InfixOp
     | left=expr op=(PLUS | MINUS) right=expr    #InfixOp
-    | left=expr op=MOD right=expr               #Modul
+    | left=expr op=MOD right=expr               #InfixOp
     | LP expr RP        #Paren
     | LIST              #List
     | VAR LB VAR RB     #ListElement
@@ -76,7 +76,7 @@ DIV: '/';
 MOD: '%';
 
 /* Operadors relacionals */
-EQ: '=';
+EQ: '==';
 NEQ: '/=';
 LT: '<';
 LET: '<=';

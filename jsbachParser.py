@@ -86,7 +86,7 @@ class jsbachParser ( Parser ):
 
     literalNames = [ "<INVALID>", "'<-'", "'<?>'", "'<!>'", "'<:>'", "'if'", 
                      "'else'", "'while'", "'<<'", "'8<'", "'+'", "'-'", 
-                     "'*'", "'/'", "'%'", "'='", "'/='", "'<'", "'<='", 
+                     "'*'", "'/'", "'%'", "'=='", "'/='", "'<'", "'<='", 
                      "'>'", "'>='", "'('", "')'", "'['", "']'", "'{'", "'}'", 
                      "'|:'", "':|'" ]
 
@@ -1180,31 +1180,6 @@ class jsbachParser ( Parser ):
                 return visitor.visitChildren(self)
 
 
-    class ModulContext(ExprContext):
-
-        def __init__(self, parser, ctx:ParserRuleContext): # actually a jsbachParser.ExprContext
-            super().__init__(parser)
-            self.left = None # ExprContext
-            self.op = None # Token
-            self.right = None # ExprContext
-            self.copyFrom(ctx)
-
-        def expr(self, i:int=None):
-            if i is None:
-                return self.getTypedRuleContexts(jsbachParser.ExprContext)
-            else:
-                return self.getTypedRuleContext(jsbachParser.ExprContext,i)
-
-        def MOD(self):
-            return self.getToken(jsbachParser.MOD, 0)
-
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitModul" ):
-                return visitor.visitModul(self)
-            else:
-                return visitor.visitChildren(self)
-
-
     class ListContext(ExprContext):
 
         def __init__(self, parser, ctx:ParserRuleContext): # actually a jsbachParser.ExprContext
@@ -1244,6 +1219,8 @@ class jsbachParser ( Parser ):
             return self.getToken(jsbachParser.PLUS, 0)
         def MINUS(self):
             return self.getToken(jsbachParser.MINUS, 0)
+        def MOD(self):
+            return self.getToken(jsbachParser.MOD, 0)
 
         def accept(self, visitor:ParseTreeVisitor):
             if hasattr( visitor, "visitInfixOp" ):
@@ -1424,7 +1401,7 @@ class jsbachParser ( Parser ):
                         pass
 
                     elif la_ == 3:
-                        localctx = jsbachParser.ModulContext(self, jsbachParser.ExprContext(self, _parentctx, _parentState))
+                        localctx = jsbachParser.InfixOpContext(self, jsbachParser.ExprContext(self, _parentctx, _parentState))
                         localctx.left = _prevctx
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_expr)
                         self.state = 156

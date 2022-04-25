@@ -23,7 +23,7 @@ lexer = jsbachLexer(data)
 stream = CommonTokenStream(lexer)
 
 parser = jsbachParser(stream)
-tree2 = parser.expr()
+tree2 = parser.write()
 
 visitor = jsbachTreeVisitor()
 output = visitor.visit(tree2)

@@ -99,11 +99,6 @@ class jsbachVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by jsbachParser#Modul.
-    def visitModul(self, ctx:jsbachParser.ModulContext):
-        return self.visitChildren(ctx)
-
-
     # Visit a parse tree produced by jsbachParser#List.
     def visitList(self, ctx:jsbachParser.ListContext):
         return self.visitChildren(ctx)

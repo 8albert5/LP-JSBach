@@ -94,11 +94,11 @@ OB: '|:';   // Open Block
 CB: ':|';   // Close Block
 
 PROCNAME: [A-Z][a-zA-Z0-9]*;
-NOTE: [A-F]([0-8])?;
+NOTE: [A-G]([0-8])?;
 VAR: '#'?[a-zA-Z][a-zA-Z0-9]*;
 NUM: '-'?[0-9]+('.'[0-9]+)?;
 STRING: '"' .*? '"';
-LIST: LCB (NOTE (NOTE)*)? RCB;
+LIST: LCB (NOTE (WS NOTE)* )? RCB;
 
 /* Handle words that are not keywords */
 // IDENTIFIER: [a-zA-Z]+;

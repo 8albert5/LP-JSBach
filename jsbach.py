@@ -6,7 +6,7 @@ from jsbachTreeVisitor import jsbachError
 import sys
 
 programa = sys.argv[1]
-input_stream = FileStream(programa, encoding = 'utf-8')
+input_stream = FileStream(programa, encoding='utf-8')
 print(f"Executant programa \"{programa}\"\n")
 
 lexer = jsbachLexer(input_stream)

@@ -1,5 +1,9 @@
-.antlr
+# Ignore folders
+.antlr/
+.idea/
+venv/
 __pycache__
 
+# Ignore extensions
 *.interp
 *.tokens

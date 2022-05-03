@@ -95,7 +95,7 @@ CB: ':|';   // Close Block
 
 PROCNAME: [A-Z][a-zA-Z0-9]*;
 NOTE: [A-G]([0-8])?;
-VAR: '#'?[a-zA-Z][a-zA-Z0-9]*;
+VAR: '#'?[a-z][a-zA-Z0-9]*;
 NUM: '-'?[0-9]+('.'[0-9]+)?;
 STRING: '"' .*? '"';
 LIST: LCB (NOTE (WS NOTE)* )? RCB;

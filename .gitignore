@@ -1,6 +1,7 @@
 # Ignore folders
 .antlr/
 .idea/
+.vscode/
 venv/
 __pycache__
 

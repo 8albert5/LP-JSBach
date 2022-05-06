@@ -12,7 +12,6 @@ class JSBachError(Exception):
 
 
 class Procediment(object):
-
     def __init__(self, name, params, instructions):
         self.name = name
         self.params = params
@@ -20,7 +19,6 @@ class Procediment(object):
 
 
 class jsbachTreeVisitor(jsbachVisitor):
-
     def __init__(self, entry="Main", params=[]):
         self.entry = entry
         self.params = params
@@ -126,6 +124,7 @@ class jsbachTreeVisitor(jsbachVisitor):
         print(" ".join(results))
 
     # Visit a parse tree produced by jsbachParser#play.
+    # TODO play instruction
     def visitPlay(self, ctx):
         return self.visitChildren(ctx)
 
@@ -142,10 +141,12 @@ class jsbachTreeVisitor(jsbachVisitor):
             self.visit(ctx.cjtInstr())
 
     # Visit a parse tree produced by jsbachParser#addList.
+    # TODO addList instruction
     def visitAddList(self, ctx):
         return self.visitChildren(ctx)
 
     # Visit a parse tree produced by jsbachParser#cutList.
+    # TODO cutList instruction
     def visitCutList(self, ctx):
         return self.visitChildren(ctx)
 
@@ -178,6 +179,9 @@ class jsbachTreeVisitor(jsbachVisitor):
             '-': lambda: left - right,
             '%': lambda: left % right
         }
+        # Comprovem divisió entre 0
+        if op == "/" and right == 0:
+            raise JSBachError(f"Divisió entre 0.")
 
         return operation.get(op, lambda: None)()
 
@@ -186,14 +190,17 @@ class jsbachTreeVisitor(jsbachVisitor):
         return self.visit(ctx.expr())
 
     # Visit a parse tree produced by jsbachParser#List.
+    # TODO visitList instruction
     def visitList(self, ctx):
         return self.visitChildren(ctx)
 
     # Visit a parse tree produced by jsbachParser#ListElement.
+    # TODO visitListElement instruction
     def visitListElement(self, ctx):
         return self.visitChildren(ctx)
 
     # Visit a parse tree produced by jsbachParser#Note.
+    # TODO Note token
     def visitNote(self, ctx):
         return self.visitChildren(ctx)
 

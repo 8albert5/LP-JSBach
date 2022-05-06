@@ -25,7 +25,7 @@ read: READ VAR;
 
 write: WRITE expr (expr)*;
 
-play: PLAY (VAR | NOTE | LIST);
+play: PLAY expr;
 
 invProc: PROCNAME (expr (expr)*) ;
 
@@ -46,13 +46,13 @@ exprCond: left=expr op=(EQ | NEQ) right=expr    #Cond
 expr: left=expr op=(MULT | DIV) right=expr      #InfixOp
     | left=expr op=(PLUS | MINUS) right=expr    #InfixOp
     | left=expr op=MOD right=expr               #InfixOp
-    | LP expr RP        #Paren
-    | LIST              #List
-    | VAR LB VAR RB     #ListElement
-    | NOTE              #Note
-    | VAR               #Variables
-    | NUM               #Numbers
-    | STRING            #Strings
+    | LP expr RP                                #Paren
+    | LCB (expr (expr)* )? RCB                  #List
+    | VAR LB VAR RB                             #ListElement
+    | NOTE                                      #Note
+    | VAR                                       #Variables
+    | NUM                                       #Numbers
+    | STRING                                    #Strings
     ;
 
 /* LEXER RULES */
@@ -93,15 +93,11 @@ RCB: '}';   // Right Curly Bracket
 OB: '|:';   // Open Block
 CB: ':|';   // Close Block
 
-PROCNAME: [A-Z][a-zA-Z0-9]*;
-NOTE: [A-G]([0-8])?;
 VAR: '#'?[a-z][a-zA-Z0-9]*;
 NUM: '-'?[0-9]+('.'[0-9]+)?;
 STRING: '"' .*? '"';
-LIST: LCB (NOTE (WS NOTE)* )? RCB;
-
-/* Handle words that are not keywords */
-// IDENTIFIER: [a-zA-Z]+;
+NOTE: ([A-B]([0-8])? | [C-G]([1-8])?);
+PROCNAME: [A-Z][a-zA-Z0-9]*;
 
 COMMENT: '~~~' .*? '~~~' -> skip;
 WS: [ \t\r\n]+ -> skip;

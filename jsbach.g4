@@ -47,8 +47,9 @@ expr: left=expr op=(MULT | DIV) right=expr      #InfixOp
     | left=expr op=(PLUS | MINUS) right=expr    #InfixOp
     | left=expr op=MOD right=expr               #InfixOp
     | LP expr RP                                #Paren
+//    | LCB ((NOTE | NUM) ((NOTE | NUM))* )? RCB    #List
     | LCB (expr (expr)* )? RCB                  #List
-    | VAR LB VAR RB                             #ListElement
+    | VAR LB (VAR | NUM) RB                     #ListElement
     | NOTE                                      #Note
     | VAR                                       #Variables
     | NUM                                       #Numbers
@@ -96,8 +97,8 @@ CB: ':|';   // Close Block
 VAR: '#'?[a-z][a-zA-Z0-9]*;
 NUM: '-'?[0-9]+('.'[0-9]+)?;
 STRING: '"' .*? '"';
-NOTE: ([A-B]([0-8])? | [C-G]([1-8])?);
-PROCNAME: [A-Z][a-zA-Z0-9]*;
+NOTE: ([A-B]([0-8])? | [C]([1-8])? | [D-G]([1-7])?);
+PROCNAME: [A-Z][_a-zA-Z0-9\u0080-\u00FF]*;
 
 COMMENT: '~~~' .*? '~~~' -> skip;
 WS: [ \t\r\n]+ -> skip;

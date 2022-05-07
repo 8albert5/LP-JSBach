@@ -1,7 +1,7 @@
 from antlr4 import *
 from jsbachLexer import jsbachLexer
 from jsbachParser import jsbachParser
-from jsbachTreeVisitor import jsbachTreeVisitor
+from jsbachTreeVisitor import JSBachTreeVisitor
 from jsbachTreeVisitor import JSBachError
 import sys
 
@@ -21,12 +21,12 @@ tree = parser.root()
 
 # DEFINITIU (? -> S'HA DE PROVAR)
 if len(sys.argv) == 3:
-    visitor = jsbachTreeVisitor(sys.argv[2])
+    visitor = JSBachTreeVisitor(sys.argv[2])
 elif len(sys.argv) > 3:
-    visitor = jsbachTreeVisitor(
+    visitor = JSBachTreeVisitor(
         sys.argv[2], [int(param) for param in sys.argv[3:]])
 else:
-    visitor = jsbachTreeVisitor()
+    visitor = JSBachTreeVisitor()
 
 try:
     visitor.visit(tree)

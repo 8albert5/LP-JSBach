@@ -20,7 +20,7 @@ class Procediment(object):
 
 class JSBachTreeVisitor(jsbachVisitor):
     notes = {
-        # "A": 28,    "B": 29,    "C": 23,    "D": 24,    "E": 25,    "F": 26,    "G": 27,
+        "A": 28,    "B": 29,    "C": 23,    "D": 24,    "E": 25,    "F": 26,    "G": 27,
         "A0": 0,    "B0": 1,    "C1": 2,	"D1": 3,	"E1": 4,	"F1": 5,	"G1": 6,
         "A1": 7,    "B1": 8,    "C2": 9,	"D2": 10,	"E2": 11,	"F2": 12,	"G2": 13,
         "A2": 14,   "B2": 15,   "C3": 16,	"D3": 17,	"E3": 18,	"F3": 19,	"G3": 20,
@@ -31,6 +31,8 @@ class JSBachTreeVisitor(jsbachVisitor):
         "A7": 49,   "B7": 50,   "C8": 51,
         "A8": 52,   "B8": 53,
     }
+
+    partitura = []
 
     def __init__(self, entry="Main", params=[]):
         self.entry = entry
@@ -137,21 +139,30 @@ class JSBachTreeVisitor(jsbachVisitor):
             tmp = self.visit(expr)
             # Comprovem si l'expressió és una llista, per mostrar els elements separats per espais.
             if isinstance(tmp, list):
-                # if len(tmp) == 0:
-                #     raise JSBachError(f"La llista és buida.")
                 results.append(" ".join(tmp))
-            elif isinstance(tmp, dict):
-                results.append(str(list(tmp.keys()))[2:-2])
             else:
                 results.append(str(tmp))
         print(" ".join(results))
 
     # Visit a parse tree produced by jsbachParser#play.
-    # TODO play instruction
+    # TODO Revisar pk peta Hanoi_rec
     def visitPlay(self, ctx):
-        # return self.visitChildren(ctx)
-        for expr in ctx.expr():
-            print(expr)
+        # Si és una llista -> afegir cada nota a la partitura d'esquerra a dreta
+        if ctx.expr().getText()[0] == '{':
+            for note_key in self.visit(ctx.expr()):
+                note = self.notes[note_key]
+                self.partitura.append(note)
+        # Si és una nota -> afegir a la partitura amb el valor d'una negra
+        else:
+            note_key = ctx.expr().getText()
+            if isinstance(note_key, str):
+                # Ens ha retornat una variable que conté una nota
+                note = self.var_scope_stack[0][note_key]
+                if isinstance(note, str):
+                    # Ens ha tornat una nota, necessitem el seu valor
+                    note = self.notes[note]
+                self.partitura.append(note)
+        # print(self.partitura)
 
     # Visit a parse tree produced by jsbachParser#conditional.
     def visitConditional(self, ctx):
@@ -166,7 +177,6 @@ class JSBachTreeVisitor(jsbachVisitor):
             self.visit(ctx.cjtInstr())
 
     # Visit a parse tree produced by jsbachParser#addList.
-    # TODO addList instruction
     def visitAddList(self, ctx):
         list_name = ctx.VAR().getText()
         llista = []
@@ -176,9 +186,12 @@ class JSBachTreeVisitor(jsbachVisitor):
         return llista
 
     # Visit a parse tree produced by jsbachParser#cutList.
-    # TODO cutList instruction
     def visitCutList(self, ctx):
-        return self.visitChildren(ctx)
+        list_name = ctx.getChild(1).VAR(0).getText()
+        element = str(self.visit(ctx.expr()))
+        llista = self.var_scope_stack[0][list_name]
+        llista.remove(element)
+        return llista
 
     # Visit a parse tree produced by jsbachParser#Cond.
     def visitCond(self, ctx):
@@ -194,7 +207,15 @@ class JSBachTreeVisitor(jsbachVisitor):
             '>': lambda: left > right,
             '>=': lambda: left >= right
         }
-        return operation.get(op, lambda: None)()
+
+        if isinstance(left, str):
+            left = self.notes[left]
+
+        if isinstance(right, str):
+            right = self.notes[right]
+
+        result = operation.get(op, lambda: None)()
+        return result
 
     # Visit a parse tree produced by jsbachParser#InfixOp.
     def visitInfixOp(self, ctx):
@@ -213,13 +234,11 @@ class JSBachTreeVisitor(jsbachVisitor):
             '%': lambda: left % right
         }
 
-        if isinstance(left, dict):
-            key = str(list(left.keys()))[2:-2]
-            left = self.notes[key]
+        if isinstance(left, str):
+            left = self.notes[left]
 
-        if isinstance(right, dict):
-            key = str(list(right.keys()))[2:-2]
-            right = self.notes[key]
+        if isinstance(right, str):
+            right = self.notes[right]
 
         result = operation.get(op, lambda: None)()
         return result
@@ -229,7 +248,6 @@ class JSBachTreeVisitor(jsbachVisitor):
         return self.visit(ctx.expr())
 
     # Visit a parse tree produced by jsbachParser#List.
-    # TODO visitList instruction
     def visitList(self, ctx):
         llista = []
         # Iterem sobre els fills menys els '{' '}' del
@@ -240,32 +258,46 @@ class JSBachTreeVisitor(jsbachVisitor):
         return llista
 
     # Visit a parse tree produced by jsbachParser#ListElement.
-    # TODO visitListElement instruction
     def visitListElement(self, ctx):
-        return self.visitChildren(ctx)
-        # list_name = ctx.VAR(0).getText()
-        # print(list_name)
-        # i = self.visit(ctx.op)
-        # print(i)
-        # if list_name in self.var_scope_stack[-1].keys():
-        #     llista = self.var_scope_stack[-1][list_name]
-        # else:
-        #     raise JSBachError(f"La llista")
+        list_name = ctx.VAR(0).getText()
+        list_aux = self.var_scope_stack[0][list_name]
+
+        index_name = ctx.getChild(2).getText()
+        if index_name[0] == '#':
+            if index_name[1:] not in self.var_scope_stack[0].keys():
+                raise JSBachError(f"Llista \"{index_name[1:]}\" no està definida.")
+            else:
+                index = len(self.var_scope_stack[0][index_name[1:]])
+        elif index_name in self.var_scope_stack[0].keys():
+            index = self.var_scope_stack[0][index_name]
+        else:
+            index = int(index_name)
+
+        if index <= 0:
+            raise JSBachError(f"Les llistes a JSBach comencen amb index 1.")
+        if index >= len(list_aux) + 1:
+            raise JSBachError(f"Index \"{index}\" fora de rang de la llista \"{list_name}\"")
+
+        list_element = list_aux[index-1]
+        return list_element
 
     # Visit a parse tree produced by jsbachParser#Note.
-    # TODO Note token
     def visitNote(self, ctx):
         # return self.visitChildren(ctx)
-        nota = {ctx.getText(): self.notes[ctx.getText()]}
+        nota = ctx.getText()
         return nota
 
     # Visit a parse tree produced by jsbachParser#Variables.
     def visitVariables(self, ctx):
         var_name = ctx.VAR().getText()
+        if var_name[0] == '#':
+            var_name = var_name[1:]
+            if var_name in self.var_scope_stack[-1].keys():
+                return len(self.var_scope_stack[-1][var_name])
         if var_name in self.var_scope_stack[-1].keys():
             return self.var_scope_stack[-1][var_name]
         else:
-            raise JSBachError(f"Variable \" {var_name}\" no està definida.")
+            raise JSBachError(f"Variable \"{var_name}\" no està definida.")
 
     # Visit a parse tree produced by jsbachParser#Numbers.
     def visitNumbers(self, ctx):

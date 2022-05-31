@@ -2,11 +2,7 @@ import os
 import shutil
 
 
-# Eliminem l'extensió .lily
-# arxiu = sys.argv[1][:-5]
-
 def runJSBachScript(arxiu, partitura):
-    # Traiem l'extensió .jsb per nombrar l'arxiu
     createlilypondfile(arxiu, partitura)
     executelilypond(arxiu)
     executetimidity(arxiu)

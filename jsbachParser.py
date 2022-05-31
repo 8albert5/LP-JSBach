@@ -5,7 +5,6 @@ from io import StringIO
 from typing.io import TextIO
 import sys
 
-
 def serializedATN():
     with StringIO() as buf:
         buf.write("\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3%")
@@ -168,7 +167,6 @@ class jsbachParser ( Parser ):
 
 
 
-
     class RootContext(ParserRuleContext):
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
@@ -223,7 +221,6 @@ class jsbachParser ( Parser ):
         finally:
             self.exitRule()
         return localctx
-
 
     class DefProcContext(ParserRuleContext):
 
@@ -303,7 +300,6 @@ class jsbachParser ( Parser ):
             self.exitRule()
         return localctx
 
-
     class CjtInstrContext(ParserRuleContext):
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
@@ -353,7 +349,6 @@ class jsbachParser ( Parser ):
         finally:
             self.exitRule()
         return localctx
-
 
     class InstrContext(ParserRuleContext):
 
@@ -472,7 +467,6 @@ class jsbachParser ( Parser ):
             self.exitRule()
         return localctx
 
-
     class AssignContext(ParserRuleContext):
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
@@ -521,7 +515,6 @@ class jsbachParser ( Parser ):
             self.exitRule()
         return localctx
 
-
     class ReadContext(ParserRuleContext):
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
@@ -563,7 +556,6 @@ class jsbachParser ( Parser ):
         finally:
             self.exitRule()
         return localctx
-
 
     class WriteContext(ParserRuleContext):
 
@@ -622,7 +614,6 @@ class jsbachParser ( Parser ):
             self.exitRule()
         return localctx
 
-
     class PlayContext(ParserRuleContext):
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
@@ -665,7 +656,6 @@ class jsbachParser ( Parser ):
         finally:
             self.exitRule()
         return localctx
-
 
     class InvProcContext(ParserRuleContext):
 
@@ -724,7 +714,6 @@ class jsbachParser ( Parser ):
         finally:
             self.exitRule()
         return localctx
-
 
     class ConditionalContext(ParserRuleContext):
 
@@ -812,7 +801,6 @@ class jsbachParser ( Parser ):
             self.exitRule()
         return localctx
 
-
     class While_Context(ParserRuleContext):
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
@@ -872,7 +860,6 @@ class jsbachParser ( Parser ):
             self.exitRule()
         return localctx
 
-
     class AddListContext(ParserRuleContext):
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
@@ -921,7 +908,6 @@ class jsbachParser ( Parser ):
             self.exitRule()
         return localctx
 
-
     class CutListContext(ParserRuleContext):
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
@@ -964,7 +950,6 @@ class jsbachParser ( Parser ):
         finally:
             self.exitRule()
         return localctx
-
 
     class ExprCondContext(ParserRuleContext):
 
@@ -1086,7 +1071,6 @@ class jsbachParser ( Parser ):
         finally:
             self.exitRule()
         return localctx
-
 
     class ExprContext(ParserRuleContext):
 

@@ -19,6 +19,7 @@ class Procediment(object):
 
 
 class JSBachTreeVisitor(jsbachVisitor):
+    # Diccionari les keys del qual són les notes i els velues són els valors numèrics associats
     notes = {
         "A": 28, "B": 29, "C": 23, "D": 24, "E": 25, "F": 26, "G": 27,
         "A0": 0, "B0": 1, "C1": 2, "D1": 3, "E1": 4, "F1": 5, "G1": 6,
@@ -29,9 +30,9 @@ class JSBachTreeVisitor(jsbachVisitor):
         "A5": 35, "B5": 36, "C6": 37, "D6": 38, "E6": 39, "F6": 40, "G6": 41,
         "A6": 42, "B6": 43, "C7": 44, "D7": 45, "E7": 46, "F7": 47, "G7": 48,
         "A7": 49, "B7": 50, "C8": 51,
-        "A8": 52, "B8": 53,
     }
 
+    # Llista on afegirem les notes que vagin sortint al programa
     partitura = []
 
     def __init__(self, entry="Main", params=[]):
@@ -40,7 +41,6 @@ class JSBachTreeVisitor(jsbachVisitor):
 
         self.var_scope_stack = []
         self.procediments = {}
-        self.music_sheet = []
 
     def executeProc(self, name, params):
         procediment = self.procediments[name]
@@ -149,20 +149,18 @@ class JSBachTreeVisitor(jsbachVisitor):
         output = self.visit(ctx.expr())
         if isinstance(output, str):
             # Ens ha retornat una nota (A, B, A0, B0, ...)
-            self.partitura.append(f"{output.lower()}'4")
+            self.partitura.append(formatLilypond(output.lower()))
         elif isinstance(output, list):
             # Ens ha retornat una llista de notes (A, B, A0, B0, ...)
             for i in output:
-                note = i.lower()
-                self.partitura.append(f"{note}'4")
+                self.partitura.append(formatLilypond(i.lower()))
         elif isinstance(output, int):
             # Ens ha retornat un enter resultat de l'aritmètica de notes.
             if output not in list(self.notes.values()):
-                print(output)
                 raise JSBachError(f"L'enter donat no correspon a cap nota.")
             else:
                 note = list(self.notes.keys())[list(self.notes.values()).index(output)]
-                self.partitura.append(f"{note.lower()}'4")
+                self.partitura.append(formatLilypond(note.lower()))
 
     # Visit a parse tree produced by jsbachParser#conditional.
     def visitConditional(self, ctx):
@@ -311,3 +309,18 @@ class JSBachTreeVisitor(jsbachVisitor):
         # Només agafem el text entre les " "
         value = ctx.getText()[1:-1]
         return value
+
+
+# Petita funció que retorna la nota en notació lilypond per afegir-la a la partitura del programa
+def formatLilypond(nota):
+    if len(nota) > 1:
+        i = int(nota[1])
+        if i == 4:
+            nota = nota[0]
+        elif i < 4:
+            comes = ","*(4-i)
+            nota = f"{nota[0]}{comes}"
+        elif i > 4:
+            apost = "'"*(abs(4-i))
+            nota = f"{nota[0]}{apost}"
+    return nota

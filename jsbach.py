@@ -5,7 +5,6 @@ from jsbachTreeVisitor import JSBachTreeVisitor
 from jsbachTreeVisitor import JSBachError
 from jsbachScript import runJSBachScript
 import sys
-import shutil
 
 programa = sys.argv[1]
 input_stream = FileStream(programa, encoding='utf-8')
@@ -27,8 +26,10 @@ else:
 
 try:
     visitor.visit(tree)
+    partitura = ' '.join(JSBachTreeVisitor.partitura)
+    if len(partitura) == 0:
+        print(f"El programa \"{programa}\" no ha generat una partitura vàlida (no buida).")
+    else:
+        runJSBachScript(programa[:-4], partitura)
 except JSBachError as e:
     print(e.message)
-
-partitura = ' '.join(JSBachTreeVisitor.partitura)
-runJSBachScript(programa[:-4], partitura)

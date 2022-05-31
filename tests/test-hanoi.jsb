@@ -1,4 +1,5 @@
 Main |:
+    <!> "Amb quantes torres de Hanoi vols jugar?"
     <?> n
     Hanoi n 1 2 3
 :|

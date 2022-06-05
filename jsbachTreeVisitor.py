@@ -29,7 +29,7 @@ class JSBachTreeVisitor(jsbachVisitor):
         "A4": 28, "B4": 29, "C5": 30, "D5": 31, "E5": 32, "F5": 33, "G5": 34,
         "A5": 35, "B5": 36, "C6": 37, "D6": 38, "E6": 39, "F6": 40, "G6": 41,
         "A6": 42, "B6": 43, "C7": 44, "D7": 45, "E7": 46, "F7": 47, "G7": 48,
-        "A7": 49, "B7": 50, "C8": 51,
+        "A7": 49, "B7": 50, "C8": 51
     }
 
     # Llista on afegirem les notes que vagin sortint al programa
@@ -178,8 +178,8 @@ class JSBachTreeVisitor(jsbachVisitor):
     def visitAddList(self, ctx):
         list_name = ctx.VAR().getText()
         llista = []
-        if list_name in self.var_scope_stack[0].keys():
-            llista = self.var_scope_stack[0][list_name]
+        if list_name in self.var_scope_stack[-1].keys():
+            llista = self.var_scope_stack[-1][list_name]
         llista.append(str(self.visit(ctx.expr())))
         return llista
 
@@ -187,7 +187,7 @@ class JSBachTreeVisitor(jsbachVisitor):
     def visitCutList(self, ctx):
         list_name = ctx.getChild(1).VAR(0).getText()
         element = str(self.visit(ctx.expr()))
-        llista = self.var_scope_stack[0][list_name]
+        llista = self.var_scope_stack[-1][list_name]
         llista.remove(element)
         return llista
 
@@ -258,7 +258,7 @@ class JSBachTreeVisitor(jsbachVisitor):
     # Visit a parse tree produced by jsbachParser#ListElement.
     def visitListElement(self, ctx):
         list_name = ctx.getChild(0).getText()
-        list_aux = self.var_scope_stack[0][list_name]
+        list_aux = self.var_scope_stack[-1][list_name]
         list_index = ctx.getChild(2).getText()
 
         if list_index.isnumeric():
@@ -266,13 +266,13 @@ class JSBachTreeVisitor(jsbachVisitor):
         else:
             if list_index[0] == '#':
                 list_aux2 = list_index[1:]
-                if list_aux2 not in self.var_scope_stack[0].keys():
+                if list_aux2 not in self.var_scope_stack[-1].keys():
                     raise JSBachError(f"La llista \"{list_aux2}\" no està definida.")
-                index = len(self.var_scope_stack[0][list_aux2])
+                index = len(self.var_scope_stack[-1][list_aux2])
             else:
-                if list_index not in self.var_scope_stack[0].keys():
+                if list_index not in self.var_scope_stack[-1].keys():
                     raise JSBachError(f"La variable \"{list_index}\" no està definida.")
-                index = self.var_scope_stack[0][list_index]
+                index = self.var_scope_stack[-1][list_index]
 
         if index <= 0:
             raise JSBachError(f"Les llistes a JSBach comencen amb index 1.")
@@ -323,4 +323,4 @@ def formatLilypond(nota):
         elif i > 4:
             apost = "'"*(abs(4-i))
             nota = f"{nota[0]}{apost}"
-    return nota
+    return f"{nota}4"

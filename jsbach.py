@@ -7,6 +7,9 @@ from jsbachScript import runJSBachScript
 import sys
 
 programa = sys.argv[1]
+if programa[-4:] != ".jsb":
+    raise Exception(f"El programa \"{programa}\" no té l'extensió correcta per JSBach \".jsb\".")
+
 input_stream = FileStream(programa, encoding='utf-8')
 print(f"Executant programa \"{programa}\"\n")
 
@@ -30,6 +33,6 @@ try:
     if len(partitura) == 0:
         print(f"El programa \"{programa}\" no ha generat una partitura vàlida (no buida).")
     else:
-        runJSBachScript(programa[:-4], partitura)
+        runJSBachScript(programa[6:-4], partitura)
 except JSBachError as e:
     print(e.message)

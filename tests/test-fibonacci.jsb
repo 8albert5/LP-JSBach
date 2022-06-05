@@ -1,20 +1,22 @@
 Main |:
     <!> "Escriu el nombre d'elements:"
     <?> n
-    Fib n
+    llista <- {}
+    Fib n llista
+    <!> llista
 :|
 
-Fib n |:
+Fib n llista |:
     if n > 2 |:
         t1 <- 0
         t2 <- 1
         next <- t1 + t2
         <!> "Seqüència de Fibonacci de" n "elements"
-        <!> t1
-        <!> t2
+        llista << t1
+        llista << t2
         i <- 3
         while i <= n |:
-            <!> next
+            llista << next
             t1 <- t2
             t2 <- next
             next <- t1 + t2

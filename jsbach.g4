@@ -47,7 +47,6 @@ expr: left=expr op=(MULT | DIV) right=expr      #InfixOp
     | left=expr op=(PLUS | MINUS) right=expr    #InfixOp
     | left=expr op=MOD right=expr               #InfixOp
     | LP expr RP                                #Paren
-//    | LCB ((NOTE | NUM) ((NOTE | NUM))* )? RCB    #List
     | LCB (expr (expr)* )? RCB                  #List
     | VAR LB (VAR | NUM) RB                     #ListElement
     | NOTE                                      #Note

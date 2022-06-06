@@ -3,6 +3,7 @@
 .idea/
 .vscode/
 venv/
+Entrega/
 __pycache__
 
 # Ignore extensions

@@ -315,12 +315,12 @@ class JSBachTreeVisitor(jsbachVisitor):
 def formatLilypond(nota):
     if len(nota) > 1:
         i = int(nota[1])
-        if i == 4:
-            nota = nota[0]
-        elif i < 4:
-            comes = ","*(4-i)
+        if i < 4:
+            comes = ","*(3-i)
             nota = f"{nota[0]}{comes}"
-        elif i > 4:
-            apost = "'"*(abs(4-i))
+        elif i >= 4:
+            apost = "'"*(abs(3-i))
             nota = f"{nota[0]}{apost}"
+    else:
+        nota = f"{nota}'"
     return f"{nota}4"
